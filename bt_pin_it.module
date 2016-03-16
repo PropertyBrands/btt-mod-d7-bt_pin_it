@@ -1,0 +1,27 @@
+<?php
+/**
+ * Implements hook_theme().
+ */
+function bt_pin_it_theme() {
+  $theme = array();
+  $base = drupal_get_path('module', 'bt_pin_it');
+  $theme['pin_it_btn'] = array(
+    'variables' => array(
+      'page_url' => NULL,
+      'media_url' => NULL,
+      'description' => NULL,
+      'attributes' => array(
+        'data-count-layout' => 'horizontal',
+        'target' => '_blank',
+      ),
+      'pin_it_url' => 'http://pinterest.com/pin/create/button/',
+      'pin_it_icon_url' => '//assets.pinterest.com/images/PinExt.png',
+      'pin_it_img_tag' => NULL,
+      'link_options_array' => array(),
+    ),
+    'template' => 'pin-it-btn',
+    'path' => $base . '/theme',
+    'file' => 'bt_pin_it.theme.inc',
+  );
+  return $theme;
+}
